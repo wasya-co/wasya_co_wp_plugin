@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name:       Wasyo Image Card
- * Description:       Wasyo custom image card for services
+ * Plugin Name:       Image Card
+ * Description:       Custom image card for services
  * Version:           1.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
@@ -27,7 +27,7 @@ function register_card_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/card_widget.php' );
 
-	$widgets_manager->register( new \Wasyo_Image_Card() );
+	$widgets_manager->register( new \Image_Card() );
 
 }
 add_action( 'elementor/widgets/register', 'register_card_widget' );
