@@ -10,13 +10,13 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Wasyo_Image_Card extends \Elementor\Widget_Base
+class Image_Card extends \Elementor\Widget_Base
 {
 
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve wasyo card widget name.
+	 * Retrieve Image card widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -24,13 +24,13 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 	 */
 	public function get_name()
 	{
-		return 'wasyo_card';
+		return 'Image_card';
 	}
 
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve Wasyo-Card widget title.
+	 * Retrieve Image-Card widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -38,7 +38,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 	 */
 	public function get_title()
 	{
-		return esc_html__('Wasyo Card', 'elementor-Wasyo-Card-widget');
+		return esc_html__('Image Card', 'elementor-Card-widget');
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 	 */
 	public function get_keywords()
 	{
-		return ['wasyo', 'image', 'card', 'custom'];
+		return ['image', 'card', 'custom'];
 	}
 
 	/**
@@ -111,7 +111,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__('Content', 'wasyo-image-card'),
+				'label' => esc_html__('Content', 'Image-card'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -119,7 +119,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'card_image',
 			[
-				'label' => esc_html__('Choose Image', 'wasyo-image-card'),
+				'label' => esc_html__('Choose Image', 'image-card'),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -130,7 +130,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'space_one',
 			[
-				'label' => esc_html__('Devider space', 'wasyo-image-card'),
+				'label' => esc_html__('Devider space', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '10',
 				'default' => 10,
@@ -140,10 +140,10 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'card_title',
 			[
-				'label' => esc_html__('Card Title', 'wasyo-image-card'),
+				'label' => esc_html__('Card Title', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
-				'placeholder' => esc_html__('Add your title here', 'wasyo-image-card'),
+				'placeholder' => esc_html__('Add your title here', 'Image-card'),
 			]
 		);
 
@@ -157,7 +157,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'space_two',
 			[
-				'label' => esc_html__('Devider space', 'wasyo-image-card'),
+				'label' => esc_html__('Devider space', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '10',
 				'default' => 10,
@@ -167,7 +167,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'divider_icon',
 			[
-				'label' => esc_html__('Icon', 'wasyo-image-card'),
+				'label' => esc_html__('Icon', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-circle',
@@ -191,7 +191,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'divider_line_width',
 			[
-				'label' => esc_html__('Devider Line Width', 'wasyo-image-card'),
+				'label' => esc_html__('Devider Line Width', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '50',
 				'default' => 50,
@@ -202,7 +202,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'space_three',
 			[
-				'label' => esc_html__('Devider space', 'wasyo-image-card'),
+				'label' => esc_html__('Devider space', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '10',
 				'default' => 10,
@@ -212,10 +212,10 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'card_description',
 			[
-				'label' => esc_html__('Card Description', 'wasyo-image-card'),
+				'label' => esc_html__('Card Description', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,
 				'label_block' => true,
-				'placeholder' => esc_html__('Add your description here', 'wasyo-image-card'),
+				'placeholder' => esc_html__('Add your description here', 'Image-card'),
 			]
 		);
 
@@ -227,7 +227,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => esc_html__('Style', 'wasyo-image-card'),
+				'label' => esc_html__('Style', 'Image-card'),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -238,7 +238,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'card_height',
 			[
-				'label' => esc_html__('Card Height', 'wasyo-image-card'),
+				'label' => esc_html__('Card Height', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '300',
 				'default' => 300,
@@ -255,7 +255,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'image_max_height',
 			[
-				'label' => esc_html__('Image Max Height', 'wasyo-image-card'),
+				'label' => esc_html__('Image Max Height', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 				'placeholder' => '300',
 				'default' => 300,
@@ -272,7 +272,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'title_options',
 			[
-				'label' => esc_html__('Title Options', 'wasyo-image-card'),
+				'label' => esc_html__('Title Options', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -282,22 +282,22 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 			'title_alignment',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__('Alignment', 'wasyo-image-card'),
+				'label' => esc_html__('Alignment', 'Image-card'),
 				'options' => [
 					'left' => [
-						'title' => esc_html__('Left', 'wasyo-image-card'),
+						'title' => esc_html__('Left', 'Image-card'),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__('Center', 'wasyo-image-card'),
+						'title' => esc_html__('Center', 'Image-card'),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__('Right', 'wasyo-image-card'),
+						'title' => esc_html__('Right', 'Image-card'),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__('Justify', 'wasyo-image-card'),
+						'title' => esc_html__('Justify', 'Image-card'),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -308,7 +308,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__('Color', 'wasyo-image-card'),
+				'label' => esc_html__('Color', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#515151',
 				'selectors' => [
@@ -330,7 +330,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'description_options',
 			[
-				'label' => esc_html__('Description Options', 'wasyo-image-card'),
+				'label' => esc_html__('Description Options', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -340,22 +340,22 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 			'description_alignment',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__('Alignment', 'wasyo-image-card'),
+				'label' => esc_html__('Alignment', 'Image-card'),
 				'options' => [
 					'left' => [
-						'title' => esc_html__('Left', 'wasyo-image-card'),
+						'title' => esc_html__('Left', 'Image-card'),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__('Center', 'wasyo-image-card'),
+						'title' => esc_html__('Center', 'Image-card'),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => esc_html__('Right', 'wasyo-image-card'),
+						'title' => esc_html__('Right', 'Image-card'),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => esc_html__('Justify', 'wasyo-image-card'),
+						'title' => esc_html__('Justify', 'Image-card'),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
@@ -366,7 +366,7 @@ class Wasyo_Image_Card extends \Elementor\Widget_Base
 		$this->add_control(
 			'description_color',
 			[
-				'label' => esc_html__('Color', 'wasyo-image-card'),
+				'label' => esc_html__('Color', 'Image-card'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#515151',
 				'selectors' => [
