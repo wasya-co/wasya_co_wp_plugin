@@ -3,9 +3,9 @@
 /**
  * Plugin Name:       Wasya Co Wp Plugin
  * Description:       Custom image card for services
- * Version:           0.1.0
- * Requires at least: 6.0
- * Requires PHP:      8.1
+ * Version:           0.0.0
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
  * Author:            Ruwan Bandara
  * Author URI:        https://www.fiverr.com/imruwan
  */
