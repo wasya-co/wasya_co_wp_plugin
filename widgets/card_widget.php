@@ -95,7 +95,7 @@ class CardWidget extends \Elementor\Widget_Base {
       <div class='W1'>
         <img src="<?= $s['image']['url'] ?>" alt="" />
       </div>
-      <h3><?= $s['title'] ?></h3>
+      <h1><?= $s['title'] ?></h1>
       <div class='W2'>
         <span></span>
         <?php \Elementor\Icons_Manager::render_icon($s['divider_icon'], ['aria-hidden' => 'true']); ?>
