@@ -3,7 +3,7 @@
  * Plugin Name:       Wasya Co Wp Plugin
  *
  *                    Good for 2023-01-07:
- * Version:           0.1.3
+ * Version:           0.1.4
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
