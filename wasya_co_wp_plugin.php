@@ -1,7 +1,7 @@
 <?
 /**
  * Plugin Name:       Wasya Co Wp Plugin
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
@@ -49,5 +49,5 @@ function card3d_uiux_20230107_shortcode() {
   </div>
 <?
 }
-add_shortcode( 'card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode' );
+add_shortcode('card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode');
 
