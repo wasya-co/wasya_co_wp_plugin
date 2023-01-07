@@ -30,4 +30,24 @@ function register_card_widget($widgets_manager) {
 add_action('elementor/widgets/register', 'register_card_widget');
 
 
+/*
+ * Card3d
+ * This will not be used - I should register it as an elementor widget, instead.
+ * _vp_ 2023-01-07
+ */
+function card3d_uiux_20230107_shortcode() {
+?>
+  <div class="Card3d-20230107" id="Card3d_uiux_20230107" >
+    <div class="cover">
+      <h1>UI/UX</h1>
+      <span class="price">&gt;&gt;&gt;</span>
+      <div class="card-back">
+        <!-- <a href="/w/services/uiux">Read More</a> -->
+        <p>Modern software tools are expected to be highly usable, to the degree of not requiring documentation. The user interface should be self-explanatory, and the user experience intuitive.</p>
+      </div>
+    </div>
+  </div>
+<?
+}
+add_shortcode( 'card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode' );
 
