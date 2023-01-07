@@ -1,7 +1,9 @@
 <?
 /**
  * Plugin Name:       Wasya Co Wp Plugin
- * Version:           0.1.2
+ *
+ *                    Good for 2023-01-07:
+ * Version:           0.1.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
@@ -50,4 +52,82 @@ function card3d_uiux_20230107_shortcode() {
 <?
 }
 add_shortcode('card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode');
+
+function under_construction_20230107_shortcode() {
+?>
+<section class="UnderConstruction20230107">
+  <div class="W0_20230107">
+    <p>Hello! We are very much under construction -<br />please be patient!</p>
+    <div class="the-dude"></div>
+
+  </div>
+  <div class="the-floor"></div>
+</section>
+<?
+}
+add_shortcode('under_construction_20230107', 'under_construction_20230107_shortcode');
+
+/*
+ * Card3d marketing
+ * _vp_ 2023-01-07
+**/
+function card3d_marketing_20230107_shortcode() {
+  ?>
+
+<div class="Card3d-Marketing-20230107">
+  <div class="grid">
+    <div class="text-component">
+      <h1>Marketing</h1>
+      <div class="W2">
+        <span></span>
+        <i aria-hidden="true" class="far fa-lightbulb"></i>        <span></span>
+      </div>
+      <p>Generating leads and business opportunities is as important as delivering a product or service.</p>
+      <p>We offer the lightest solution to improve IRR and the bottom line.</p>
+    </div>
+
+    <div class="td-figure" id="this_id" >
+      <img style="width: 400px" src="https://images.unsplash.com/photo-1603695454344-12df53ab0c11?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="Image description">
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('load', (event) => {
+(function() {
+
+$("#this_id").mousemove(function(e) {
+  const w = 400
+  const h = 320
+  const maxDeg = 90
+  const maxZDeg = 10
+
+  var parentOffset = $(this).offset()
+  //or $(this).offset() if you really just want the current element's offset
+  var relX = e.pageX - parentOffset.left - w/2
+  var relY = e.pageY - parentOffset.top - h/2
+  let relYpc = relY/h/2 // rel Y Percent
+  let relXpc = relX/w/2 // rel X Percent
+  let relZpc = relX > 0 ? relXpc+relYpc : relXpc-relYpc
+
+  // logg(relXpc, 'rel x pc')
+  // logg(relYpc, 'rel y pc')
+  // logg(relZpc, 'rel z pc')
+
+  // $(".td-figure img").css('transform', 'rotate(0)')
+  $(".td-figure img").css('transform', `rotateX(${maxDeg*relYpc}deg) rotateY(${-maxDeg*relXpc}deg) rotateZ(${maxZDeg*relZpc}deg)`)
+
+})
+
+$("#this_id").mouseout(function(e) {
+  // $(".td-figure img").css('transform', 'rotateX(10deg) rotateY(-18deg) rotateZ(3deg)')
+})
+
+})() // anon exec
+}) //load
+</script>
+  <?
+}
+add_shortcode('card3d_marketing_20230107', 'card3d_marketing_20230107_shortcode');
+
 
