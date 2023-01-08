@@ -207,7 +207,17 @@ section.align-items-stretch .elementor-widget-container {
 .Card3d-Marketing-20230107 {
   // width: calc( 100% - 200px );
   height: 400px;
-  border: 1px solid red;
+  // border: 1px solid #aa5353;
+  border-radius: 10px;
+  background: white;
+
+  /* #14 from: https://getcssscan.com/css-box-shadow-examples */
+  // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  /* #27 */
+  // box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   padding-top: 3em;
   padding-left: 1.2em;

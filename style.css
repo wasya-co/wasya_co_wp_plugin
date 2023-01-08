@@ -184,7 +184,11 @@ section.align-items-stretch .elementor-widget-CardWidget, section.align-items-st
 }
 .Card3d-Marketing-20230107 {
   height: 400px;
-  border: 1px solid red;
+  border-radius: 10px;
+  background: white;
+  /* #14 from: https://getcssscan.com/css-box-shadow-examples */
+  /* #27 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding-top: 3em;
   padding-left: 1.2em;
   margin-left: auto;

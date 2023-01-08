@@ -3,7 +3,7 @@
  * Plugin Name:       Wasya Co Wp Plugin
  *
  *                    Good for 2023-01-07:
- * Version:           0.1.4
+ * Version:           0.1.5
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
@@ -87,7 +87,9 @@ function card3d_marketing_20230107_shortcode() {
     </div>
 
     <div class="td-figure" id="this_id" >
-      <img style="width: 400px" src="https://images.unsplash.com/photo-1603695454344-12df53ab0c11?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="Image description">
+      <img style="width: 300px"
+        src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2023/01/07182225/300x230_marketing.jpeg"
+        alt="Image description" />
     </div>
   </div>
 </div>
