@@ -53,14 +53,36 @@ function card3d_uiux_20230107_shortcode() {
 }
 add_shortcode('card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode');
 
+
+
+
+
 function under_construction_20230107_shortcode() {
+
+  //   <div class="wco-logo-column">
+  //   <img width="259" height="66" src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2022/09/29185755/259x66-WasyaCo-Logo-YellowShadow.png" class="attachment-full size-full" alt="" loading="lazy" style="width:100%;height:25.48%;max-width:259px">
+  //   <div class="wco-divider">
+  //     <span class="wco-divider-separator">
+  //     <div class="wco-icon">
+  //       <i aria-hidden="true" class="fas fa-leaf"></i>
+  //     </div>
+  //     </span>
+  //   </div>
+  //   <div>
+  //     Est. 2013
+  //   </div>
+  // </div>
+
 ?>
 <section class="UnderConstruction20230107">
-  <div class="W0_20230107">
-    <p>Hello! We are very much under construction -<br />please be patient!</p>
-    <div class="the-dude"></div>
 
+  <div class="W0_20230107">
+    <!-- <p>Wasya Co is a software development consultancy
+      for small and medium Enterprises. We offer innovative technical solutions
+      to complex and domain-specific business needs.</p> -->
+    <div class="the-dude"></div>
   </div>
+
   <div class="the-floor"></div>
 </section>
 <?
