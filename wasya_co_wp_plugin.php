@@ -20,6 +20,13 @@ function wco_init() {
 
   wp_register_style('wasya_co_wp_plugin_style', plugins_url('style.css', __FILE__), false, $plugin_data['Version'], 'all');
   wp_enqueue_style('wasya_co_wp_plugin_style');
+
+  wp_enqueue_script('wasya_co_wp_plugin_js',
+    plugins_url('scripts.js', __FILE__),
+    array('jquery'),
+    wp_get_theme()->get( 'Version' ),
+    true // in footer
+  );
 }
 add_action( 'wp_enqueue_scripts', 'wco_init' );
 
@@ -93,64 +100,34 @@ add_shortcode('under_construction_20230107', 'under_construction_20230107_shortc
  * Card3d marketing
  * _vp_ 2023-01-07
 **/
-function card3d_marketing_20230107_shortcode() {
-  ?>
+function card3d_marketing_20230107_shortcode($raw_attrs) {
+  $attrs = shortcode_atts( array(
+    'title' => 'Some Title',
+    'icon' => 'lightbulb',
+    'body' => '<p>Hello, <b>world</b>!</p>',
+    'imgurl' => 'https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2023/01/07182225/300x230_marketing.jpeg',
+  ), $raw_attrs );
+?>
 
 <div class="Card3d-Marketing-20230107">
   <div class="grid">
     <div class="text-component">
-      <h1>Marketing</h1>
+      <h1><?= $attrs['title']; ?></h1>
       <div class="W2">
         <span></span>
-        <i aria-hidden="true" class="far fa-lightbulb"></i>        <span></span>
+        <i aria-hidden="true" class="far fa-<?= $attrs['icon']; ?>"></i>
+        <span></span>
       </div>
-      <p>Generating leads and business opportunities is as important as delivering a product or service.</p>
-      <p>We offer the lightest solution to improve IRR and the bottom line.</p>
+      <?= $attrs['body']; ?>
     </div>
 
-    <div class="td-figure" id="this_id" >
-      <img style="width: 300px"
-        src="https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2023/01/07182225/300x230_marketing.jpeg"
-        alt="Image description" />
+    <div class="td-figure" >
+      <img style="width: 300px" src="<?= $attrs['imgurl']; ?>" alt="" />
     </div>
   </div>
 </div>
 
-<script>
-window.addEventListener('load', (event) => {
-(function() {
-
-$("#this_id").mousemove(function(e) {
-  const w = 400
-  const h = 320
-  const maxDeg = 90
-  const maxZDeg = 10
-
-  var parentOffset = $(this).offset()
-  //or $(this).offset() if you really just want the current element's offset
-  var relX = e.pageX - parentOffset.left - w/2
-  var relY = e.pageY - parentOffset.top - h/2
-  let relYpc = relY/h/2 // rel Y Percent
-  let relXpc = relX/w/2 // rel X Percent
-  let relZpc = relX > 0 ? relXpc+relYpc : relXpc-relYpc
-
-  // logg(relXpc, 'rel x pc')
-  // logg(relYpc, 'rel y pc')
-  // logg(relZpc, 'rel z pc')
-
-  // $(".td-figure img").css('transform', 'rotate(0)')
-  $(".td-figure img").css('transform', `rotateX(${maxDeg*relYpc}deg) rotateY(${-maxDeg*relXpc}deg) rotateZ(${maxZDeg*relZpc}deg)`)
-
-})
-
-$("#this_id").mouseout(function(e) {
-  // $(".td-figure img").css('transform', 'rotateX(10deg) rotateY(-18deg) rotateZ(3deg)')
-})
-
-})() // anon exec
-}) //load
-</script>
-  <?
+<?
 }
 add_shortcode('card3d_marketing_20230107', 'card3d_marketing_20230107_shortcode');
 
