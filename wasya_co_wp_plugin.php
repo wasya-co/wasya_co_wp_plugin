@@ -44,8 +44,7 @@ add_action('elementor/widgets/register', 'register_card_widget');
  * This will not be used - I should register it as an elementor widget, instead.
  * _vp_ 2023-01-07
  */
-function card3d_uiux_20230107_shortcode() {
-?>
+function card3d_uiux_20230107_shortcode() { ?>
   <div class="Card3d-20230107" id="Card3d_uiux_20230107" >
     <div class="cover">
       <h1>UI/UX</h1>
@@ -56,8 +55,7 @@ function card3d_uiux_20230107_shortcode() {
       </div>
     </div>
   </div>
-<?
-}
+<? }
 add_shortcode('card3d_uiux_20230107', 'card3d_uiux_20230107_shortcode');
 
 
@@ -80,19 +78,19 @@ function under_construction_20230107_shortcode() {
   //   </div>
   // </div>
 
-?>
-<section class="UnderConstruction20230107">
+  ?>
+  <section class="UnderConstruction20230107">
 
-  <div class="W0_20230107">
-    <!-- <p>Wasya Co is a software development consultancy
-      for small and medium Enterprises. We offer innovative technical solutions
-      to complex and domain-specific business needs.</p> -->
-    <div class="the-dude"></div>
-  </div>
+    <div class="W0_20230107">
+      <!-- <p>Wasya Co is a software development consultancy
+        for small and medium Enterprises. We offer innovative technical solutions
+        to complex and domain-specific business needs.</p> -->
+      <div class="the-dude"></div>
+    </div>
 
-  <div class="the-floor"></div>
-</section>
-<?
+    <div class="the-floor"></div>
+  </section>
+  <?
 }
 add_shortcode('under_construction_20230107', 'under_construction_20230107_shortcode');
 
@@ -107,28 +105,96 @@ function card3d_marketing_20230107_shortcode($raw_attrs) {
     'body' => '<p>Hello, <b>world</b>!</p>',
     'imgurl' => 'https://d15g8hc4183yn4.cloudfront.net/wp-content/uploads/2023/01/07182225/300x230_marketing.jpeg',
   ), $raw_attrs );
-?>
+  ?>
 
-<div class="Card3d-Marketing-20230107">
-  <div class="grid">
-    <div class="text-component">
-      <h1><?= $attrs['title']; ?></h1>
-      <div class="W2">
-        <span></span>
-        <i aria-hidden="true" class="far fa-<?= $attrs['icon']; ?>"></i>
-        <span></span>
+  <div class="Card3d-Marketing-20230107">
+    <div class="grid">
+      <div class="text-component">
+        <h1><?= $attrs['title']; ?></h1>
+        <div class="W2">
+          <span></span>
+          <i aria-hidden="true" class="far fa-<?= $attrs['icon']; ?>"></i>
+          <span></span>
+        </div>
+        <?= $attrs['body']; ?>
       </div>
-      <?= $attrs['body']; ?>
-    </div>
 
-    <div class="td-figure" >
-      <img style="width: 300px" src="<?= $attrs['imgurl']; ?>" alt="" />
+      <div class="td-figure" >
+        <img style="width: 300px" src="<?= $attrs['imgurl']; ?>" alt="" />
+      </div>
     </div>
   </div>
-</div>
 
-<?
+  <?
 }
 add_shortcode('card3d_marketing_20230107', 'card3d_marketing_20230107_shortcode');
 
+
+/**
+ * [category_widget slug='interviewing']
+ * 2022-05-09 _vp_
+ * 2023-02-24 _vp_ moved from piousbox_wp_plugin
+**/
+function wco_category_widget( $raw_attrs ) {
+  $attrs = shortcode_atts( array(
+    'slug'       => 'tools',
+    'n_posts'    => 1,
+    'show_title' => "yes"
+  ), $raw_attrs );
+  $cat = get_category_by_slug( $attrs['slug'] );
+  $cat_link = get_category_link( $cat->term_id );
+
+  $title = '';
+  if ($attrs['show_title'] == "yes") {
+    $title = <<<EOT
+      <div class='header'>
+        <h1>
+          <a href='${cat_link}'>{$cat->name}</a>
+        </h1>
+      </div><!--header-->
+EOT;
+  }
+
+  $args = array(
+    # 'offset'           => $attrs['idx'],
+    # 'category'         => $cat->term_id, # and sub-cats
+    'category__in' => [ $cat->term_id ], # only the parent cat
+    'orderby'          => 'post_date',
+    'order'            => 'DESC',
+    'post_type'        => 'post',
+    'post_status'      => 'publish',
+    'suppress_filters' => true
+  );
+
+  if ($attrs['n_posts'] != '0') {
+    $args['numberposts'] = $attrs['n_posts'];
+  }
+
+  $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+
+  $postsRendered = '';
+  foreach ($recent_posts as &$post) {
+
+    // $author   = get_the_author_meta('display_name', $post->author);
+    // $date     = substr($post['post_date'], 0, 10);
+    // $meta = "<div class='meta' >By $author on {$date}</div>";
+
+    $subtitle = new WP_Subtitle( $post['ID'] );
+    $subtitle = $subtitle->get_subtitle();
+    $post_link = get_permalink( $post['ID'] );
+
+    $tmp = <<<EOT
+    <li >
+      <h3><a href="$post_link">{$post['post_title']}</a></h3>
+      <div class="description"><a href="$post_link">$subtitle</a></div>
+    </li>
+EOT;
+    $postsRendered = "$postsRendered$tmp";
+  }
+
+  $out = "<div class='WcoCategoryWidget' >{$title}<ol>{$postsRendered}</ol></div>";
+
+  return $out;
+}
+add_shortcode( 'category_widget', 'wco_category_widget' );
 

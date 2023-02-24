@@ -1,3 +1,4 @@
 0.0.0 - xxxx-xx-xx - Ruwan delivered the CardWidget
 0.1.0 - 2022-12-06 - removed most styling from CardWidget, added "Read More" to it.
         2023-01-07 - excellent changes, css 3d
+        2023-02-24 - iterated on WcoCategoryWidget

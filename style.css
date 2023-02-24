@@ -298,3 +298,9 @@ section.align-items-stretch .elementor-widget-CardWidget, section.align-items-st
   border-top-color: #fff;
   filter: drop-shadow(-0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.1));
 }
+.WcoCategoryWidget .header {
+  border-bottom: 2px solid black;
+}
+.WcoCategoryWidget ol {
+  list-style-type: none;
+}
