@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-function wco_init() {
+function wco_assets() {
   if (!function_exists('get_plugin_data')) {
     require_once(ABSPATH . 'wp-admin/includes/plugin.php');
   }
@@ -28,9 +28,17 @@ function wco_init() {
     true // in footer
   );
 }
-add_action( 'wp_enqueue_scripts', 'wco_init' );
+add_action( 'wp_enqueue_scripts', 'wco_assets' );
 
+function wco_init() {
+  // add_rewrite_tag( '%pagename%', '([^&]+)' );
+  // add_rewrite_rule( '^book/book-author/([^/]*)/?', 'index.php?post_type=book&book-author=$matches[1]','top' );
 
+  add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]', 'top' );
+
+  flush_rewrite_rules(true);
+}
+add_action('init', 'wco_init', 10, 0);
 
 function register_card_widget($widgets_manager) {
   require_once(__DIR__ . '/widgets/card_widget.php');
@@ -93,6 +101,23 @@ function under_construction_20230107_shortcode() {
   <?
 }
 add_shortcode('under_construction_20230107', 'under_construction_20230107_shortcode');
+
+
+function issue_navigator_widget() {
+  ?>
+  <section class='issue-navigator' >
+    <div class='max-width'>
+      <div class='p1'>
+        <a href='#'>Issue Feb'23</a>
+      </div>
+      <div class='p2'>
+        Past Issues: <a href='#'>Dec'22</a>, <a href='#'>Jan'23</a>, <a href='#'>All Issues</a>
+      </div>
+    </div>
+  </section>
+  <?
+}
+add_shortcode('issue_navigator', 'issue_navigator_widget');
 
 /*
  * Card3d marketing
