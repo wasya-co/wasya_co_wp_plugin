@@ -30,11 +30,19 @@ function wco_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'wco_assets' );
 
+
 function wco_init() {
   // add_rewrite_tag( '%pagename%', '([^&]+)' );
   // add_rewrite_rule( '^book/book-author/([^/]*)/?', 'index.php?post_type=book&book-author=$matches[1]','top' );
 
-  add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]', 'top' );
+  // $utm_campaign = $_GET['utm_campaign']; // eg spring_sale
+  // $utm_content  = $_GET['utm_content'];  // What was clicked? eg logolink or textlink
+  // $utm_medium   = $_GET['utm_medium'];   // eg cpc = cost per click
+  // $utm_source   = $_GET['utm_source'];   // eg google
+  // $utm_term     = $_GET['utm_term'];     // eg running+shoes
+
+  // add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&'+$_SERVER['QUERY_STRING'], 'top' );
+  add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&', 'top' );
 
   flush_rewrite_rules(true);
 }
