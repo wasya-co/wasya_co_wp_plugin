@@ -116,13 +116,15 @@ function issue_navigator_widget() {
   <section class='issue-navigator' >
     <div class='max-width'>
       <div class='p1'>
-        <a href='#'>Issue Feb'23</a>
+        <a href='/2023q3-issue'>Issue 2023Q3</a>
       </div>
-      <div class='p2'>
-        Past Issues: <a href='#'>Dec'22</a>, <a href='#'>Jan'23</a>, <a href='#'>All Issues</a>
+      <div class='p2 past-issues'>
+        <? /* @TODO: This can be a dynamic menu. _vp_ 2023-05-05 */ ?>
+        Past Issues: <a href='/issues/2023q3-issue-2'>Issue 2023Q3 (2)</a>, <a href='/issues'>All Issues</a>
       </div>
     </div>
   </section>
+  <div class='divider'></div>
   <?
 }
 add_shortcode('issue_navigator', 'issue_navigator_widget');
@@ -164,7 +166,7 @@ add_shortcode('card3d_marketing_20230107', 'card3d_marketing_20230107_shortcode'
 
 
 /**
- * [category_widget slug='interviewing']
+ * [category_widget slug='interviewing' n_posts=5 ]
  * 2022-05-09 _vp_
  * 2023-02-24 _vp_ moved from piousbox_wp_plugin
 **/
