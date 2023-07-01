@@ -49,11 +49,11 @@ section.align-items-stretch .elementor-widget-CardWidget, section.align-items-st
   text-align: center;
   margin: 1.2em 0;
 }
-.CardWidget .W3 a {
+/* .CardWidget .W3 a {
   background: var(--wco-light-link-color);
   color: var(--wco-light-bg-color);
   font-weight: bold;
-}
+} */
 .Card3d-20230107 {
   /* uiux */
   position: relative;
