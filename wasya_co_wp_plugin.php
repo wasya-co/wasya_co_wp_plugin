@@ -3,7 +3,7 @@
  * Plugin Name:       Wasya Co Wp Plugin
  *
  *                    Good for 2023-01-07:
- * Version:           0.1.8
+ * Version:           0.1.9
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
@@ -111,23 +111,28 @@ function under_construction_20230107_shortcode() {
 add_shortcode('under_construction_20230107', 'under_construction_20230107_shortcode');
 
 
-function issue_navigator_widget() {
-  ?>
-  <section class='issue-navigator' >
-    <div class='max-width'>
-      <div class='p1'>
-        <a href='/2023q3-issue'>Issue 2023Q3</a>
+function issues_navigator() {
+  if ( has_nav_menu( 'issues-nav' ) ) { ?>
+    <section class='issues-navigator' >
+      <div class='max-width'>
+        <nav >
+          <ul >
+            <? wp_nav_menu(array( 'theme_location' => 'issues-nav',
+                                  'before' => '<span>',
+                                  'after' => '</span>',
+                                  'depth'          => 1,
+                                  'fallback_cb'    => false,
+            ) ); ?>
+          </ul>
+        </nav>
       </div>
-      <div class='p2 past-issues'>
-        <? /* @TODO: This can be a dynamic menu. _vp_ 2023-05-05 */ ?>
-        Past Issues: <a href='/issues/2023q3-issue-2'>Issue 2023Q3 (2)</a>, <a href='/issues'>All Issues</a>
-      </div>
-    </div>
-  </section>
-  <div class='divider'></div>
-  <?
+    </section>
+  <? }
 }
-add_shortcode('issue_navigator', 'issue_navigator_widget');
+function issues_navigator_shortcode() {
+  echo( issues_navigator() );
+}
+add_shortcode('issues_navigator', 'issues_navigator_shortcode');
 
 /*
  * Card3d marketing
