@@ -42,9 +42,9 @@ function wco_init() {
   // $utm_term     = $_GET['utm_term'];     // eg running+shoes
 
   // add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&'+$_SERVER['QUERY_STRING'], 'top' );
-  add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&', 'top' );
+  // add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&', 'top' );
 
-  flush_rewrite_rules(true);
+  // flush_rewrite_rules(true);
 }
 add_action('init', 'wco_init', 10, 0);
 
