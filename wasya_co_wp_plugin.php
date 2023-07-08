@@ -3,7 +3,7 @@
  * Plugin Name:       Wasya Co Wp Plugin
  *
  *                    Good for 2023-01-07:
- * Version:           0.1.7
+ * Version:           0.1.8
  * Requires at least: 5.2
  * Requires PHP:      7.2
  **/
@@ -44,7 +44,7 @@ function wco_init() {
   // add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&'+$_SERVER['QUERY_STRING'], 'top' );
   // add_rewrite_rule( '^pages/([^/]*)/?', 'index.php?pagename=$matches[1]&', 'top' );
 
-  flush_rewrite_rules(true);
+  // flush_rewrite_rules(true);
 }
 add_action('init', 'wco_init', 10, 0);
 
